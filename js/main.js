@@ -1,4 +1,4 @@
-//feather.replace();
+feather.replace();
 
 //main app
 //localstorage
