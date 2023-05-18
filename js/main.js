@@ -1,4 +1,4 @@
-feather.replace();
+//feather.replace();
 
 //main app
 //localstorage
@@ -8,16 +8,23 @@ const DATA_KASIR_APP = "DATA_KASIR_APP";
 if (localStorage.getItem(DATA_KASIR_APP)) {
   let value = JSON.parse(localStorage.getItem(DATA_KASIR_APP));
   for (let i in value) {
-    data[i] = [value[i][0], value[i][1]];
-    createRow(i, value[i][0], value[i][1]);
+    data[i] = {
+      price: value[i].price,
+      category: value[i].category,
+    };
+    createRow(i, value[i].price, value[i].category);
     noIndex = i;
   }
+  console.log(data);
 }
 //syncron to localstorage
-function syncLocalStorage(event, goodsName, price, category) {
+function syncLocalStorage(event, goodsName, price_, category_) {
   switch (event) {
     case "ADD":
-      data[goodsName] = [price, category];
+      data[goodsName] = {
+        price: price_,
+        category: category_,
+      };
       break;
     case "REMOVE":
       delete data[goodsName];
