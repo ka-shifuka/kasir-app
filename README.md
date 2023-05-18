@@ -20,3 +20,5 @@ data secara real **time**
 ## about the author 
 hey saya adalah arya dewa seseorang yang sangat suka coding
 walau saya masih cukup pemula di dunia koding
+
+[live demo](https://aryadev127.github.io/kasir-app/)
