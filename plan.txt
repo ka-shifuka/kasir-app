@@ -1,0 +1,28 @@
+## consturction of the app
+
+1. sebuah table dengan colom memiliki 
+  a). nomer
+  b). nama barang
+  c). harga
+  d). kategori
+  e). tool -> edit and delet
+
+2. search bar -> bisa secara real time mencari barang pada table 
+   yang di buat
+
+3. add new table -> nama barang - harga - kategori
+
+4. kategori dibuat konstan meliputi
+  a). makanan
+  b). minuman
+  c). alat dapur
+  d). alat elektronik
+  e). pakaian
+  
+5. localstorage sebagai databases
+
+6. framework / library
+  a). bootstrap
+  b). feather icon
+  c). sweet alert
+  d). bootstrap icon

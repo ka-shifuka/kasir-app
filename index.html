@@ -1,0 +1,186 @@
+<!-- quick start -->
+<!-- author : arya dewangga puja -->
+<!-- open source quick start -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- meta tag -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="author" content="arya dewangga puja" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="Aplikasi kasir sederhana" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="white" />
+
+    <!-- fav icon -->
+    <link rel="icon" href="" type="image/x-icon" />
+    <!-- end fav icon -->
+
+    <!-- framework and library-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- end framework and library-->
+
+    <!-- custom style css -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- end custom style css -->
+
+    <!-- title -->
+    <title>Kasir app</title>
+    <!-- end title -->
+  </head>
+  <body>
+    <!-- container -->
+    <div class="container bg-light">
+      <!-- section search and add button -->
+      <section class="tool-bar mb-3">
+        <button
+          type="button"
+          class="btn btn-primary ms-1"
+          data-bs-toggle="modal"
+          data-bs-target="#staticBackdrop"
+        >
+          <i data-feather="plus"></i>
+        </button>
+        <div class="input-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Cari barang"
+            id="search-bar"
+          />
+          <button
+            class="btn btn-outline-primary"
+            type="button"
+            id="button-addon2"
+          >
+            <i data-feather="search"></i>
+          </button>
+        </div>
+      </section>
+      <!-- end section search and add button -->
+
+      <!-- table data barang -->
+      <section class="table-data">
+        <table class="table table-striped">
+          <thead class="bg-primary text-dark">
+            <tr>
+              <th scope="col">Nama barang</th>
+              <th scope="col">Harga</th>
+              <th scope="col">Kategori</th>
+              <th scope="col">remove</th>
+            </tr>
+          </thead>
+          <tbody id="list-goods">
+            <tr id="kripik kentang">
+              <td>kripik kentang</td>
+              <td>10.000</td>
+              <td>makanan</td>
+              <td>
+                <i
+                  onclick="remove(this)"
+                  class="feather-16 text-danger bi bi-trash"
+                ></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <!-- end table data barang -->
+    </div>
+
+    <!-- modal -->
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="staticBackdrop"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">
+              Tambahkan barang
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <section class="data-input">
+              <form
+                action="javascript:void(0)"
+                class="row justify-content-center mb-4"
+                id="data"
+                autocomplete="off"
+              >
+                <div class="col-10 mb-3">
+                  <label>Nama barang</label>
+                  <input class="form-control" type="text" id="goods" />
+                </div>
+                <div class="col-10 mb-3">
+                  <label>Harga barang</label>
+                  <input class="form-control" type="number" id="price" />
+                </div>
+                <div class="col-10 mb-3">
+                  <label>Pilih kategori</label>
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                    id="category"
+                  >
+                    <option value="makanan">Makanan</option>
+                    <option value="minuman">Minuman</option>
+                    <option value="pakaian">pakaian</option>
+                    <option value="alat dapur">alat dapur</option>
+                    <option value="alat elektronik">alat elektronik</option>
+                  </select>
+                </div>
+              </form>
+            </section>
+          </div>
+          <div class="modal-footer">
+            <button
+              onclick="add()"
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              Tambahkan
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end modal -->
+
+    <!-- end container -->
+
+    <!-- custom script -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+  </body>
+</html>
