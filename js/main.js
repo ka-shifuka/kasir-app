@@ -64,6 +64,7 @@ function createRow(goodsName, price, category) {
   let listGoods = document.querySelector("#list-goods");
   let newRow = `
             <tr id="${goodsName.trim()}">
+              <td><span class="no"></span></td>
               <td>${goodsName}</td>
               <td>${price}</td>
               <td>${category}</td>

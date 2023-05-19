@@ -10,6 +10,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  counter-reset: no; /* Set the counter to 0 */
+}
+
+.no:before {
+  counter-increment: no; /* Increment the counter */
+  content: counter(no) ; /* Display the counter */
 }
 /* end body */
 

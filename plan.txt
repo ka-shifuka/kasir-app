@@ -5,7 +5,7 @@
   b). nama barang
   c). harga
   d). kategori
-  e). tool -> edit and delet
+  e). tool -> delet
 
 2. search bar -> bisa secara real time mencari barang pada table 
    yang di buat
