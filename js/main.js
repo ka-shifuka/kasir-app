@@ -38,7 +38,31 @@ function syncLocalStorage(event, goodsName, price_, category_) {
 function remove(element) {
   let goodsName = element.parentElement.parentElement;
   syncLocalStorage("REMOVE", goodsName.id);
-  goodsName.remove();
+  swal(
+    {
+      title: "hapus barang ini",
+      text: `ini akan menghapus barang ${goodsName.id} secara permanen`,
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#DD6B55",
+      confirmButtonText: "hapus",
+      cancelButtonText: "batalkan",
+      closeOnConfirm: false,
+      closeOnCancel: false,
+    }).then(function (isConfirm) {
+      if (isConfirm) {
+        swal({
+          title: "dihapus",
+          icon: "success",
+        });
+        goodsName.remove();
+        return;
+      }
+      swal({
+        title: "dibatalkan",
+        icon: "warning",
+      });
+    })
 }
 
 function add() {
