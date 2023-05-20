@@ -102,7 +102,7 @@ searchBar.addEventListener("keyup", function () {
 //protocol
 // check if the form have value will be true and vise versa
 function dataValid(goodsName, price) {
-  let symbol = "%^$#!@{}>:;,?<=÷×+€£¥₩_|《》¡¿¤`~°♡&*";
+  let symbol = "%^!{}>:;,?<=÷×+€£¥₩_|《》¡¿¤`~°♡*";
   for (let i in goodsName) {
     if (symbol.indexOf(goodsName[i] > -1)) {
       swal({
