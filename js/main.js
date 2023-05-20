@@ -50,7 +50,7 @@ function add() {
     maximumSignificantDigits: 3,
   }).format(price.value);
 
-  if (!haveValue(goodsName.value, price)) {
+  if (!dataValid(goodsName.value, price)) {
     return;
   }
   createRow(goodsName.value, formatPrice, category.value);
@@ -101,7 +101,18 @@ searchBar.addEventListener("keyup", function () {
 
 //protocol
 // check if the form have value will be true and vise versa
-function haveValue(goodsName, price) {
+function dataValid(goodsName, price) {
+  let symbol = "%^$#!@{}>:;,?<=÷×+€£¥₩_|《》¡¿¤`~°♡&*";
+  for (let i in goodsName) {
+    if (symbol.indexOf(goodsName[i] > -1)) {
+      swal({
+        title: "Data tidak valid",
+        text: `simbol ini ${goodsName[i]} dilarang`,
+        icon: "warning",
+      });
+      return false;
+    }
+  }
   if (goodsName == "" || price == 0) {
     swal({
       title: "Data tidak valid",
