@@ -38,31 +38,30 @@ function syncLocalStorage(event, goodsName, price_, category_) {
 function remove(element) {
   let goodsName = element.parentElement.parentElement;
   syncLocalStorage("REMOVE", goodsName.id);
-  swal(
-    {
-      title: "hapus barang ini",
-      text: `ini akan menghapus barang ${goodsName.id} secara permanen`,
-      type: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#DD6B55",
-      confirmButtonText: "hapus",
-      cancelButtonText: "batalkan",
-      closeOnConfirm: false,
-      closeOnCancel: false,
-    }).then(function (isConfirm) {
-      if (isConfirm) {
-        swal({
-          title: "dihapus",
-          icon: "success",
-        });
-        goodsName.remove();
-        return;
-      }
+  swal({
+    title: "hapus barang ini",
+    text: `ini akan menghapus barang ${goodsName.id} secara permanen`,
+    type: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#DD6B55",
+    confirmButtonText: "hapus",
+    cancelButtonText: "batalkan",
+    closeOnConfirm: false,
+    closeOnCancel: false,
+  }).then(function (isConfirm) {
+    if (isConfirm) {
       swal({
-        title: "dibatalkan",
-        icon: "warning",
+        title: "dihapus",
+        icon: "success",
       });
-    })
+      goodsName.remove();
+      return;
+    }
+    swal({
+      title: "dibatalkan",
+      icon: "warning",
+    });
+  });
 }
 
 function add() {
@@ -111,14 +110,15 @@ searchBar.addEventListener("keyup", function () {
   let filter = this.value.toLowerCase();
   let listFilter = list.querySelectorAll("tr");
 
-  for (let i = 0; i < listFilter.length; i++) {
-    let textValue = listFilter[i].id;
-    if (textValue.toLowerCase().indexOf(filter) > -1) {
-      listFilter[i].style.display = "";
+  listFilter.forEach((data) => {
+    let textValue = data.id.toLowerCase();
+    if (textValue.indexOf(filter.trim()) > -1) {
+      data.style.display = "";
     } else {
-      listFilter[i].style.display = "none";
+      data.style.display = "none";
     }
-  }
+  });
+
 });
 //end search engine
 //end main app
