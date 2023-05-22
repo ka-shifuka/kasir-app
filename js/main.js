@@ -125,8 +125,8 @@ searchBar.addEventListener("keyup", function () {
 //protocol
 // check if the form have value will be true and vise versa
 function dataValid(goodsName, price) {
-  let symbol = "%^!{}>:;,?<=÷×+€£¥₩_|《》¡¿¤`~°♡*";
-  for (let i = 0; i > goodsName.length; i++) {
+  let symbol = "!@$^':;,?+×÷=<>{}[]€£¥₩~`¤°♡_\|《》";
+  for (let i = 0; i < goodsName.length; i++) {
     if (symbol.indexOf(goodsName[i]) > -1) {
       swal({
         title: "Data tidak valid",
