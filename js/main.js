@@ -118,7 +118,6 @@ searchBar.addEventListener("keyup", function () {
       data.style.display = "none";
     }
   });
-
 });
 //end search engine
 //end main app
@@ -127,8 +126,8 @@ searchBar.addEventListener("keyup", function () {
 // check if the form have value will be true and vise versa
 function dataValid(goodsName, price) {
   let symbol = "%^!{}>:;,?<=÷×+€£¥₩_|《》¡¿¤`~°♡*";
-  for (let i in goodsName) {
-    if (symbol.indexOf(goodsName[i] > -1)) {
+  for (let i of goodsName) {
+    if (symbol.indexOf(goodsName[i]) > -1) {
       swal({
         title: "Data tidak valid",
         text: `simbol ini ${goodsName[i]} dilarang`,
