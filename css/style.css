@@ -28,7 +28,7 @@ body {
 
 /* container */
 .container {
-  height: 800px;
+  height: 500px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.125);
   border-radius: 20px;
   padding: 15px 0;
