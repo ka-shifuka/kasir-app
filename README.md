@@ -9,7 +9,7 @@ data secara real **time**
  * sweet alert 
  * feather
  * icon
- * bootsyrap icon
+ * bootstrap icon
 
 ## kontributor
  * aryadev127 (arya dewa)
@@ -21,4 +21,4 @@ data secara real **time**
 hey saya adalah arya dewa seseorang yang sangat suka coding
 walau saya masih cukup pemula di dunia koding
 
-[live demo](https://aryadev127.github.io/kasir-app/)
+[live demo](https://ka-shifuka.github.io/kasir-app/)
